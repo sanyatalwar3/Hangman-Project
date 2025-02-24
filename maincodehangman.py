@@ -5,7 +5,7 @@ pg=pygame
 
 # --------- MUSIC ---------
 mixer.init() # initializes the mixer module
-mixer.music.load('images&music\playsound.mp3') # lofi beats
+mixer.music.load('playsound.mp3') # lofi beats
 mixer.music.play()
 
 pg.init()
@@ -16,14 +16,14 @@ pg.display.set_caption('Hangman') # sets a name to the pygame window pop up
 
 
 # --------- HANGMAN TITLE ---------
-hang=pg.image.load('images&music\hangmantitle.png')
+hang=pg.image.load('hangmantitle.png')
 
 
 # --------- CHOOSE A CATEGORY ---------
-categ=pg.image.load('images&music\chooseacategory.png')
+categ=pg.image.load('chooseacategory.png')
 cs=[] # cs is a list containing the categories - 4 categories
 for i in range(1,5):
-    c=pg.image.load('images&music\category'+str(i)+'.png')
+    c=pg.image.load('category'+str(i)+'.png')
     cs.append(c)
 Font1=pg.font.SysFont('comicsans',28)   # font of the 'click on the category to play'
 
@@ -34,15 +34,15 @@ Font2=pg.font.SysFont('calibri',37,'bold')
 Font3=pg.font.SysFont('calibri',40,'bold')
 
 # --------- YOU LOST/WON WITH SAD AND FACES ---------
-youwon=pg.image.load('images&music\youwon.png')
-youlost=pg.image.load('images&music\youlost.png')
-happyface=pg.image.load('images&music\happyface.png')
+youwon=pg.image.load('youwon.png')
+youlost=pg.image.load('youlost.png')
+happyface=pg.image.load('happyface.png')
 happyface=pg.transform.scale(happyface,(96,84))
-sadface=pg.image.load('images&music\sadface.png')
+sadface=pg.image.load('sadface.png')
 sadface=pg.transform.scale(sadface,(84,84))
 
 # --------- PLAY AGAIN ---------
-playagain=pg.image.load('images&music\playagain.png')
+playagain=pg.image.load('playagain.png')
 
 # --------- LETTERS ---------
 letters=[] #nested list of coordinates and the letter it contants - [x,y,letter]
@@ -63,7 +63,7 @@ Font=pg.font.SysFont('comicsans',38)
 
 
 # --------- CLOUDS ---------
-clouds=pg.image.load('images&music\cloudforbg.png')
+clouds=pg.image.load('cloudforbg.png')
 cloudsmall=pg.transform.scale(clouds,(75,35)) # resizes the clouds
 # you can use pg.transform.rotate to rotate the images of the clouds
 
@@ -71,7 +71,7 @@ cloudsmall=pg.transform.scale(clouds,(75,35)) # resizes the clouds
 # --------- HANGMAN IMAGES ---------
 hms=[] # creating a list of the hangman images
 for i in range(1,8):
-    hm=pg.image.load('images&music\hangman'+str(i)+'.png')
+    hm=pg.image.load('hangman'+str(i)+'.png')
     aftertransform=pg.transform.scale(hm,(400,450))
     hms.append(aftertransform)
 position=0 # 0-starting, 1- one error, 2- two errors and so on
@@ -83,7 +83,7 @@ def draw(f,word): # deals with the hangman figures, colours, bg colour etc
     global cl1,cl2,cl3,cl4,cl5,cl6,letters, guessed, position
 
     # --------- BACKGROUND ---------
-    a.fill((0,190,255)) # light blue colour for the bg (R,G,B)
+    a.fill((255,182,193)) # light blue colour for the bg (R,G,B)
 
 
     # --------- CLOUDS ---------
